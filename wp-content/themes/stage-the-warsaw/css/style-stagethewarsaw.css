@@ -1,0 +1,8 @@
+html {
+  font-size: 16px; }
+  html .page {
+    margin: 0; }
+  html body {
+    margin: 0;
+    background: #887e7e;
+    font-family: "Merienda"; }
