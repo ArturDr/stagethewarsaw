@@ -7,7 +7,155 @@ html {
     }
     body {
         margin: 0;
-        background: $main-grey;
+        background: $main-background;
         font-family: $font;
+
+         //top section
+         .top-section {
+            display: grid;
+            grid-template-columns: 10% 1fr 10%;
+            grid-template-rows: 58px 620px 58px;
+
+            //menu
+            .menu-container {
+                display: grid;
+                grid-column: 1 / 4;
+                grid-row: 1 / 2;
+                grid-template-columns: 3% 1fr 3%;
+                align-content: center;
+                background: $menu-background;
+                .navbar {
+                    display: grid;
+                    grid-column: 2 / 3;
+                    grid-template-columns: 15% 1fr;
+                    .navbar-logo {
+                        display: flex;
+                        align-items: center;
+                    }
+                    .navbar-list {
+                        grid-column: 2 / 3;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        .nav-link {
+                            text-decoration: none;
+                            font-family: $font;
+                            font-weight: 600;
+                            font-size: 1.2em;
+                            margin-left: 2em;
+                            color: $menu-text;
+                            &:visited {
+                                color: $menu-text;
+                                text-decoration: none;
+                            }
+                            &:hover,
+                            &:focus {
+                                text-decoration: none;
+                                color: $menu-dark-text;
+                            }
+                        }
+                    }
+                }
+                .navbar-mobile {
+                    display: none;
+                }
+                .navbar-list-mobile {
+                    position: absolute;
+                    top: 58px;
+                    left: -100%;
+                    display: flex;
+                    width: 100%;
+                    flex-direction: column;
+                    transition: 0.5s linear;
+                    background: $menu-background;
+                    .nav-link {
+                        text-decoration: none;
+                        font-family: $font;
+                        font-weight: 600;
+                        font-size: 1.2em;
+                        color: $menu-text;
+                        padding: 10px 25px;
+                    }
+                }
+            }
+        }
+
+        //mobile-styles
+        @media only screen and (max-width: 768px) {
+            .top-section {
+                grid-template-columns: 5% 1fr 5%;
+                grid-template-rows: 58px 720px;
+                .menu-container {
+                    grid-template-columns: 5% 1fr 5%;
+                    grid-template-rows: 100%;
+                    grid-column: 1 / 4;
+                    grid-row: 1 / 2;
+                    .navbar {
+                        display: none;
+                    }
+                    .navbar-mobile {
+                        display: grid;
+                        grid-column: 2 / 3;
+                        grid-row: 1 / 2;
+                        grid-template-columns: 15% auto 5%;
+                        .navbar-logo {
+                            grid-column: 1 / 2;
+                            display: flex;
+                            align-items: center;
+                        }
+                        .burger {
+                            grid-column: 3 / 4;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            .menu-icon {
+                                color: $menu-text;
+                                font-size: 1.5em;
+                                display: block;
+                            }
+                            .menu-xmark {
+                                display: none;
+                            }
+                        }
+                    }
+                    &.active {
+                        grid-template-columns: 5% 1fr 5%;
+                        grid-template-rows: 1fr;
+                        grid-row: 1 / 2;
+                        .navbar-mobile {
+                            grid-row: 1 / 2;
+                            .burger {
+                                grid-column: 3 / 4;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                .menu-xmark {
+                                    color: $menu-text;
+                                    font-size: 1.5em;
+                                    display: block;
+                                }
+                                .menu-icon {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .navbar-list-mobile {
+                            left: 0%;
+                            .nav-link {
+                                &:visited {
+                                    color: $menu-text;
+                                    text-decoration: none;
+                                }
+                                &:hover,
+                                &:focus {
+                                    text-decoration: none;
+                                    color: $menu-dark-text;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -4,5 +4,115 @@ html {
     margin: 0; }
   html body {
     margin: 0;
-    background: #887e7e;
+    background: #f9fee1;
     font-family: "Merienda"; }
+    html body .top-section {
+      display: grid;
+      grid-template-columns: 10% 1fr 10%;
+      grid-template-rows: 58px 620px 58px; }
+      html body .top-section .menu-container {
+        display: grid;
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+        grid-template-columns: 3% 1fr 3%;
+        align-content: center;
+        background: #f0fcbf; }
+        html body .top-section .menu-container .navbar {
+          display: grid;
+          grid-column: 2 / 3;
+          grid-template-columns: 15% 1fr; }
+          html body .top-section .menu-container .navbar .navbar-logo {
+            display: flex;
+            align-items: center; }
+          html body .top-section .menu-container .navbar .navbar-list {
+            grid-column: 2 / 3;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center; }
+            html body .top-section .menu-container .navbar .navbar-list .nav-link {
+              text-decoration: none;
+              font-family: "Merienda";
+              font-weight: 600;
+              font-size: 1.2em;
+              margin-left: 2em;
+              color: #f9bccc; }
+              html body .top-section .menu-container .navbar .navbar-list .nav-link:visited {
+                color: #f9bccc;
+                text-decoration: none; }
+              html body .top-section .menu-container .navbar .navbar-list .nav-link:hover, html body .top-section .menu-container .navbar .navbar-list .nav-link:focus {
+                text-decoration: none;
+                color: #e86f8f; }
+        html body .top-section .menu-container .navbar-mobile {
+          display: none; }
+        html body .top-section .menu-container .navbar-list-mobile {
+          position: absolute;
+          top: 58px;
+          left: -100%;
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          transition: 0.5s linear;
+          background: #f0fcbf; }
+          html body .top-section .menu-container .navbar-list-mobile .nav-link {
+            text-decoration: none;
+            font-family: "Merienda";
+            font-weight: 600;
+            font-size: 1.2em;
+            color: #f9bccc;
+            padding: 10px 25px; }
+    @media only screen and (max-width: 768px) {
+      html body .top-section {
+        grid-template-columns: 5% 1fr 5%;
+        grid-template-rows: 58px 720px; }
+        html body .top-section .menu-container {
+          grid-template-columns: 5% 1fr 5%;
+          grid-template-rows: 100%;
+          grid-column: 1 / 4;
+          grid-row: 1 / 2; }
+          html body .top-section .menu-container .navbar {
+            display: none; }
+          html body .top-section .menu-container .navbar-mobile {
+            display: grid;
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            grid-template-columns: 15% auto 5%; }
+            html body .top-section .menu-container .navbar-mobile .navbar-logo {
+              grid-column: 1 / 2;
+              display: flex;
+              align-items: center; }
+            html body .top-section .menu-container .navbar-mobile .burger {
+              grid-column: 3 / 4;
+              display: flex;
+              align-items: center;
+              justify-content: center; }
+              html body .top-section .menu-container .navbar-mobile .burger .menu-icon {
+                color: #f9bccc;
+                font-size: 1.5em;
+                display: block; }
+              html body .top-section .menu-container .navbar-mobile .burger .menu-xmark {
+                display: none; }
+          html body .top-section .menu-container.active {
+            grid-template-columns: 5% 1fr 5%;
+            grid-template-rows: 1fr;
+            grid-row: 1 / 2; }
+            html body .top-section .menu-container.active .navbar-mobile {
+              grid-row: 1 / 2; }
+              html body .top-section .menu-container.active .navbar-mobile .burger {
+                grid-column: 3 / 4;
+                display: flex;
+                justify-content: center;
+                align-items: center; }
+                html body .top-section .menu-container.active .navbar-mobile .burger .menu-xmark {
+                  color: #f9bccc;
+                  font-size: 1.5em;
+                  display: block; }
+                html body .top-section .menu-container.active .navbar-mobile .burger .menu-icon {
+                  display: none; }
+            html body .top-section .menu-container.active .navbar-list-mobile {
+              left: 0%; }
+              html body .top-section .menu-container.active .navbar-list-mobile .nav-link:visited {
+                color: #f9bccc;
+                text-decoration: none; }
+              html body .top-section .menu-container.active .navbar-list-mobile .nav-link:hover, html body .top-section .menu-container.active .navbar-list-mobile .nav-link:focus {
+                text-decoration: none;
+                color: #e86f8f; } }

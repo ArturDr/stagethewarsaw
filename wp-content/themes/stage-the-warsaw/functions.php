@@ -141,7 +141,9 @@ function stage_the_warsaw_scripts() {
 	wp_enqueue_style( 'stage-the-warsaw-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'stage-the-warsaw-style', 'rtl', 'replace' );
 	wp_enqueue_style( 'merienda-font', '//fonts.googleapis.com/css2?family=Merienda:wght@300;400;500;600;700;800;900&display=swap');
+	wp_enqueue_style( 'icon-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
 	wp_enqueue_style( 'stagethewarsaw-style', get_template_directory_uri() . '/css/style-stagethewarsaw.css' );
+	
 
 	wp_enqueue_script( 'stage-the-warsaw-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
